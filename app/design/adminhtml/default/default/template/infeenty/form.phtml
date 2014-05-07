@@ -1,0 +1,66 @@
+<div class="entry-edit">
+    <?php echo $this->getFormHtml();?>
+</div>
+<script type="text/javascript">
+function fireEvent(element,event){
+    if (document.createEventObject){
+        // dispatch for IE
+        var evt = document.createEventObject();
+        return element.fireEvent('on'+event,evt)
+    }
+    else{
+        // dispatch for firefox + others
+        var evt = document.createEvent("HTMLEvents");
+        evt.initEvent(event, true, true ); // event type,bubbling,cancelable
+        return !element.dispatchEvent(evt);
+    }
+}
+
+		
+	function changeText(elem, changeVal){
+	   if(elem.textContent){
+		  elem.textContent = changeVal;
+	   }else{
+		  elem.innerText = changeVal;
+	   }
+	}
+		
+	function initGridAjaxCustom() {
+		selected_product_id = document.getElementById('product_id').value;
+		if (document.getElementById('products_grid_radio'+selected_product_id) != null) {
+			document.getElementById('products_grid_radio'+selected_product_id).checked = true;
+			document.getElementById('products_grid_radio'+selected_product_id).parentNode.parentNode.addClassName('on-mouse-over');
+		}
+    }
+	function radioAction(productId) {
+		selected_product_id = document.getElementById('product_id').value;
+		
+		if (document.getElementById('products_grid_radio'+selected_product_id) != null) {
+			document.getElementById('products_grid_radio'+selected_product_id).parentNode.parentNode.removeClassName('on-mouse-over');
+		}		
+				
+        document.getElementById('products_grid_radio'+productId).parentNode.parentNode.addClassName('on-mouse-over');
+	    var tds = document.getElementById('products_grid_radio'+productId).parentNode.parentNode.getElementsByTagName("td");	   
+	    document.getElementById('product_details_select').parentNode.parentNode.style.display = 'none';
+	   
+	    document.getElementById('product_details_name').parentNode.parentNode.style.display = '';
+		changeText(document.getElementById('product_details_name'), tds[2].firstChild.data);		
+		
+		document.getElementById('product_details_price').parentNode.parentNode.style.display = '';
+		changeText(document.getElementById('product_details_price'), tds[5].firstChild.data);					
+				
+		document.getElementById('product_details_qty').parentNode.parentNode.style.display = '';
+		changeText(document.getElementById('product_details_qty'), tds[6].firstChild.data);		
+		
+		document.getElementById('name_note').style.display = 'none';
+		document.getElementById('qty_note').style.display = '';
+		
+
+		document.getElementById('name_product_edit').href = '<?php echo Mage::getUrl('adminhtml/catalog_product/edit/'); ?>'+'id/'+productId+'/key/'+'<?php echo Mage::getSingleton('adminhtml/url')->getSecretKey("adminhtml_mycontroller","myaction"); ?>'+'/';
+		document.getElementById('qty_product_edit').href = '<?php echo Mage::getUrl('adminhtml/catalog_product/edit/'); ?>'+'id/'+productId+'/key/'+'<?php echo Mage::getSingleton('adminhtml/url')->getSecretKey("adminhtml_mycontroller","myaction"); ?>'+'/';
+	   
+	    document.getElementById('product_id').value = productId;
+    }	
+	
+
+</script>

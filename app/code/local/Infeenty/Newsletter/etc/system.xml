@@ -1,0 +1,40 @@
+<config>
+	<tabs>
+		<infeenty_newsletter translate="label" module="infeenty_newsletter">
+			<label>Newsletter &#8734;</label>
+			<sort_order>140</sort_order>
+		</infeenty_newsletter>
+	</tabs>
+	<sections>
+		<infeenty_newsletter translate="label" module="infeenty_newsletter">
+			<label>Newsletter &#8734;</label>
+			<tab>infeenty_newsletter</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>140</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_store>1</show_in_store>
+			<show_website>1</show_website>
+			<groups>
+				<general translate="label">
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label,comment">
+							<label>Enable</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_store>1</show_in_store>
+							<show_in_website>1</show_in_website>
+							<sort_order>1</sort_order>
+						</active>
+					</fields>
+                </general>			
+			</groups>
+		</infeenty_newsletter>
+	</sections>
+</config>

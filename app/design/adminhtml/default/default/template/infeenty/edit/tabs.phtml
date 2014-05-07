@@ -1,0 +1,40 @@
+<tr style="display:<?php echo $product_found ? 'none': ''; ?>">
+  <td class="label"><label for="product">Product
+      <span class="required">
+      *
+      </span>
+    </label></td>
+  <td class="value"><span id="product_details_select">
+    <a href="javascript://" title="This is optional (if you want link slide with a product )" onClick="fireEvent($('slider_tabs_product_selection'), 'click'); initGridAjaxCustom(); return false;">Select a Product</a>
+    </span>
+    <p class="note">This is options select if you want to link slider to product</p></td>
+</tr>
+<tr style="display:<?php echo $product_found ? '': 'none'; ?>;">
+  <td class="label"><label for="product">Product Name</label></td>
+  <td class="value"><span id="product_details_name">
+    <?php echo $product_name ?>
+    </span>
+    <p class="note" id="name_note" style="color:#666; display:none;">
+      <span>
+      <a href="javascript://" onClick="fireEvent($('slider_tabs_product_selection'), 'click');  return false;">Change Product</a> || <a target="blank" id="name_product_edit" href="javascript://">Edit Product</a>
+      </span>
+    </p></td>
+  <input type="hidden" style="position:absolute;" class="input-text" value="<?php echo $product_id;?>" name="product_id" id="product_id" />
+</tr>
+<tr style="display:<?php echo $product_found ? '': 'none'; ?>;">
+  <td class="label"><label for="product">Product Price</label></td>
+  <td class="value"><span id="product_details_price">
+    <?php echo $price ?>
+    </span>
+    <p class="note" id="qty_note" style="color:#666; display:<?php echo $product_found ? '': 'none'; ?>;">
+      <span>
+      <a href="javascript://" onClick="fireEvent($('slider_tabs_product_selection'), 'click'); return false;">Change Product</a> || <a target="blank" id="qty_product_edit" href="javascript://">Edit Product</a>
+      </span>
+    </p></td>
+</tr>
+<tr style="display:<?php echo $product_found ? '': 'none'; ?>;">
+  <td class="label"><label for="product">Product Qty</label></td>
+  <td class="value"><span id="product_details_qty">
+    <?php echo $qty ?>
+    </span></td>
+</tr>
