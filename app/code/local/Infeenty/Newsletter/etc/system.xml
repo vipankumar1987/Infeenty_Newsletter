@@ -1,0 +1,109 @@
+<config>
+	<tabs>
+		<infeenty_newsletter translate="label" module="newsletter">
+			<label>Newsletter &#8734;</label>
+			<sort_order>140</sort_order>
+		</infeenty_newsletter>
+	</tabs>
+	<sections>
+		<infeenty_newsletter translate="label" module="newsletter">
+			<label>Newsletter &#8734;</label>
+			<tab>infeenty_newsletter</tab>
+			<frontend_type>text</frontend_type>
+			<sort_order>140</sort_order>
+			<show_in_default>1</show_in_default>
+			<show_in_store>1</show_in_store>
+			<show_website>1</show_website>
+			<groups>
+				<general translate="label">
+                    <label>General</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+					<fields>
+						<active translate="label,comment">
+							<label>Enable</label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_store>1</show_in_store>
+							<show_in_website>1</show_in_website>
+							<sort_order>1</sort_order>
+						</active>
+						<onstartup translate="label,comment">
+							<label><![CDATA[Enable on load]]></label>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<comment><![CDATA[Form will display with first visit on page load]]></comment>
+							<show_in_default>1</show_in_default>
+							<show_in_store>1</show_in_store>
+							<show_in_website>1</show_in_website>
+							<sort_order>3</sort_order>
+						</onstartup>
+						<enable_lightbox translate="label,comment,tooltip">
+							<label><![CDATA[Enable Lightbox (Model window)]]></label>
+							<frontend_type>select</frontend_type>
+							<comment><![CDATA[This will open newsletter form in model window]]></comment>
+							<tooltip><![CDATA[This will open newsletter form in model <br/>window using lightbox]]></tooltip>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<sort_order>2</sort_order>
+							<show_in_default>1</show_in_default>
+							<show_in_store>1</show_in_store>
+							<show_in_website>1</show_in_website>
+						</enable_lightbox>
+					</fields>
+                </general>			
+				<captcha translate="label">
+					<label><![CDATA[Captcha settings]]></label>
+					<show_in_default>1</show_in_default>
+					<show_in_store>1</show_in_store>
+					<show_in_website>1</show_in_website>
+					<frontend_type>text</frontend_type>
+					<sort_order>2</sort_order>
+					<fields>
+						<active translate="label">
+							<label><![CDATA[Enable]]></label>
+							<sort_order>1</sort_order>
+							<frontend_type>select</frontend_type>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_store>1</show_in_store>
+							<show_in_website>1</show_in_website>
+						</active>
+						<enable_recaptcha translate="label">
+							<label><![CDATA[Enable reCaptcha]]></label>
+							<sort_order>2</sort_order>
+							<frontend_type>select</frontend_type>
+							<comment><![CDATA[<img src="https://developers.google.com/recaptcha/images/reCAPTCHA_Sample_Red.png"/>]]></comment>
+							<source_model>adminhtml/system_config_source_yesno</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_store>1</show_in_store>
+							<show_in_website>1</show_in_website>
+							<depends><active>1</active></depends>
+						</enable_recaptcha>
+						<recaptcha_theme translate="label">
+							<label><![CDATA[reCaptcha Theme]]></label>
+							<sort_order>3</sort_order>
+							<frontend_type>select</frontend_type>
+							<source_model>infeentynewsletter/recaptchatheme</source_model>
+							<show_in_default>1</show_in_default>
+							<show_in_store>1</show_in_store>
+							<show_in_website>1</show_in_website>
+							<depends><enable_recaptcha>1</enable_recaptcha></depends>
+						</recaptcha_theme>
+						<recaptcha_red>
+							<sort_order>4</sort_order>
+                            <frontend_model>infeentynewsletter/recaptcha_red</frontend_model>
+							<show_in_default>1</show_in_default>
+							<show_in_store>1</show_in_store>
+							<show_in_website>1</show_in_website>
+							<depends><recaptcha_theme>2</recaptcha_theme></depends>
+						</recaptcha_red>
+					</fields>
+				</captcha>
+			</groups>
+		</infeenty_newsletter>
+	</sections>
+</config>
