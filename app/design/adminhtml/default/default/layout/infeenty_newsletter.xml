@@ -1,7 +1,0 @@
-<layout version="0.1.0">
-    <adminhtml_customfields_index>
-        <reference name="content">
-			<block type="infeentynewsletter/adminhtml_newsletter" name="infeenty_newsletter" />
-        </reference>
-    </adminhtml_customfields_index>
-</layout>
