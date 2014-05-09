@@ -125,6 +125,7 @@
 }
 #MB_content .input-box{
 	padding-left: 6px;
+	min-height: 60px;
 }
 #MB_content .button span span{
 	padding: 9px!important;
@@ -148,5 +149,5 @@
 	width: 93%;
 	border: 1px solid #CECBCB;
 	color: #5F5F5F;
-	margin: 0px 2px 11px 0px;
+	margin: 0px 2px 0px 0px;
 }

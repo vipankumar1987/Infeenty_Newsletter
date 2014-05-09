@@ -29,7 +29,7 @@
     <div class="block-title">
         <strong><span><?php echo $this->__('Newsletter') ?></span></strong>
     </div>
-    <form action="<?php echo $this->getFormActionUrl() ?>" method="post" id="newsletter-validate-detail">
+    <form action="<?php echo $this->getFormActionUrl() ?>" onsubmit="return false;" method="post" id="newsletter-validate-detail">
         <div class="block-content">
             <div class="form-subscribe-header">
                 <label for="newsletter"><?php echo $this->__('Sign Up for Our Newsletter:') ?></label>
@@ -51,6 +51,36 @@
     //]]>
 	 <?php if( $this->isLightBoxEnabled()){
 		echo "Modalbox.show($('newsletter-validate-detail'), {title: '{$this->__('Sign Up for Our Newsletter')}', width: 300});";
+		?>
+		
+var newsletterform = null;
+setTimeout(function(){
+	newsletterform = new VarienForm('newsletter-validate-detail', true);
+	newsletterform.validator.options.immediate =  true;
+	Event.observe('newsletter-validate-detail','submit', function(event){
+		Event.stop(event);
+		if (newsletterform.validator && newsletterform.validator.validate()){
+			$('newsletter-validate-detail').request({
+				onComplete:function(){
+					
+				},
+				onSuccess: function(t){
+					if(t.responseJSON.error.length){
+						alert(t.responseJSON.error);
+					} else {
+						alert(t.responseJSON.success);
+						setTimeout(function(){
+							Modalbox.hide();
+						},1000);
+					}
+				}
+			});
+		}
+		$('newsletter-validate-detail').onsubmit = function(){return false;}
+		return false;
+	});
+},1000);
+		<?php
 	 }?>
     </script>
 </div>
