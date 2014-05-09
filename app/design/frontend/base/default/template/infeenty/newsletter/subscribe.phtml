@@ -49,7 +49,7 @@
     //<![CDATA[
         var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
     //]]>
-	 <?php if( $this->isLightBoxEnabled()){
+	 <?php if( $this->isLightBoxEnabled() && $this->isOnload()){
 		echo "Modalbox.show($('newsletter-validate-detail'), {title: '{$this->__('Sign Up for Our Newsletter')}', width: 300});";
 		?>
 		
