@@ -60,6 +60,7 @@ setTimeout(function(){
 	Event.observe('newsletter-validate-detail','submit', function(event){
 		Event.stop(event);
 		if (newsletterform.validator && newsletterform.validator.validate()){
+			Modalbox.deactivate();
 			$('newsletter-validate-detail').request({
 				onComplete:function(){
 					
@@ -67,6 +68,7 @@ setTimeout(function(){
 				onSuccess: function(t){
 					if(t.responseJSON.error.length){
 						alert(t.responseJSON.error);
+						Modalbox.activate();
 					} else {
 						alert(t.responseJSON.success);
 						setTimeout(function(){

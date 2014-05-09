@@ -41,6 +41,7 @@
 							<show_in_store>1</show_in_store>
 							<show_in_website>1</show_in_website>
 							<sort_order>3</sort_order>
+							<depends><enable_lightbox>1</enable_lightbox></depends>
 						</onstartup>
 						<enable_lightbox translate="label,comment,tooltip">
 							<label><![CDATA[Enable Lightbox (Model window)]]></label>
