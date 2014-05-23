@@ -56,6 +56,9 @@ class Infeenty_Newsletter_SubscriberController extends Mage_Newsletter_Subscribe
 					$success_mesge = $this->__('Thank you for your subscription.');
                    // $session->addSuccess($success_mesge);
                 }
+				$session = Mage::getSingleton('core/session');
+				$session->setData('user_subscribe',true);
+				$error_message='';
             }
             catch (Mage_Core_Exception $e) {
 				$error_message = $this->__('There was a problem with the subscription: %s', $e->getMessage());

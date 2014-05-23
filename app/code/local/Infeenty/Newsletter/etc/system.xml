@@ -41,8 +41,7 @@
 							<show_in_store>1</show_in_store>
 							<show_in_website>1</show_in_website>
 							<sort_order>3</sort_order>
-							<depends><enable_lightbox>1</enable_lightbox></depends>
-						</onstartup>
+						</onstartup><!--
 						<enable_lightbox translate="label,comment,tooltip">
 							<label><![CDATA[Enable Lightbox (Model window)]]></label>
 							<frontend_type>select</frontend_type>
@@ -53,7 +52,7 @@
 							<show_in_default>1</show_in_default>
 							<show_in_store>1</show_in_store>
 							<show_in_website>1</show_in_website>
-						</enable_lightbox>
+						</enable_lightbox>-->
 					</fields>
                 </general>			
 				<captcha translate="label">
@@ -77,7 +76,7 @@
 							<label><![CDATA[Enable reCaptcha]]></label>
 							<sort_order>2</sort_order>
 							<frontend_type>select</frontend_type>
-							<comment><![CDATA[<img src="https://developers.google.com/recaptcha/images/reCAPTCHA_Sample_Red.png"/>]]></comment>
+							<tooltip><![CDATA[<img src="https://developers.google.com/recaptcha/images/reCAPTCHA_Sample_Red.png"/>]]></tooltip>
 							<source_model>adminhtml/system_config_source_yesno</source_model>
 							<show_in_default>1</show_in_default>
 							<show_in_store>1</show_in_store>
@@ -94,14 +93,14 @@
 							<show_in_website>1</show_in_website>
 							<depends><enable_recaptcha>1</enable_recaptcha></depends>
 						</recaptcha_theme>
-						<recaptcha_red>
+						<publickey translate="label">
+							<label><![CDATA[Public Key]]></label>
 							<sort_order>4</sort_order>
-                            <frontend_model>infeentynewsletter/recaptcha_red</frontend_model>
+							<frontend_type>text</frontend_type>
 							<show_in_default>1</show_in_default>
 							<show_in_store>1</show_in_store>
 							<show_in_website>1</show_in_website>
-							<depends><recaptcha_theme>2</recaptcha_theme></depends>
-						</recaptcha_red>
+						</publickey>
 					</fields>
 				</captcha>
 			</groups>

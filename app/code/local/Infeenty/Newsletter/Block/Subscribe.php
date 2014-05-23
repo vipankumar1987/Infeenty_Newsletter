@@ -29,9 +29,8 @@ class Infeenty_Newsletter_Block_Subscribe extends Mage_Newsletter_Block_Subscrib
 				Mage::app()->getStore()->getId()
 			);
 	}
-	protected function isLightBoxEnabled(){
-
-		return (bool)$this->getConfig('infeenty_newsletter/general/enable_lightbox');
+	protected function isSubscribed(){
+		return (bool)Mage::getSingleton('core/session')->getUserSubscribe();
 	}
 	protected function isOnload(){
 		return (bool)$this->getConfig('infeenty_newsletter/general/onstartup');

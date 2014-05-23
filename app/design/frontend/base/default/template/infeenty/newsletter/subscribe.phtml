@@ -24,8 +24,11 @@
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
  
+if( $this->isSubscribed()){
+	return;
+}
 ?>
-<div class="block block-subscribe" id="infeenty_newsletter" <?php echo $this->isLightBoxEnabled()?"style='display:none'":''?>>
+<div class="block block-subscribe" id="infeenty_newsletter" <?php echo $this->isOnload()?"style='display:none'":''?>>
     <div class="block-title">
         <strong><span><?php echo $this->__('Newsletter') ?></span></strong>
     </div>
@@ -49,7 +52,7 @@
     //<![CDATA[
         var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
     //]]>
-	 <?php if( $this->isLightBoxEnabled() && $this->isOnload()){
+	 <?php if( $this->isOnload()){
 		echo "Modalbox.show($('newsletter-validate-detail'), {title: '{$this->__('Sign Up for Our Newsletter')}', width: 300});";
 		?>
 		
