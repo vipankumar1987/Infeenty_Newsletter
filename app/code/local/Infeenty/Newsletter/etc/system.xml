@@ -41,68 +41,9 @@
 							<show_in_store>1</show_in_store>
 							<show_in_website>1</show_in_website>
 							<sort_order>3</sort_order>
-						</onstartup><!--
-						<enable_lightbox translate="label,comment,tooltip">
-							<label><![CDATA[Enable Lightbox (Model window)]]></label>
-							<frontend_type>select</frontend_type>
-							<comment><![CDATA[This will open newsletter form in model window]]></comment>
-							<tooltip><![CDATA[This will open newsletter form in model <br/>window using lightbox]]></tooltip>
-							<source_model>adminhtml/system_config_source_yesno</source_model>
-							<sort_order>2</sort_order>
-							<show_in_default>1</show_in_default>
-							<show_in_store>1</show_in_store>
-							<show_in_website>1</show_in_website>
-						</enable_lightbox>-->
+						</onstartup>
 					</fields>
-                </general>			
-				<captcha translate="label">
-					<label><![CDATA[Captcha settings]]></label>
-					<show_in_default>1</show_in_default>
-					<show_in_store>1</show_in_store>
-					<show_in_website>1</show_in_website>
-					<frontend_type>text</frontend_type>
-					<sort_order>2</sort_order>
-					<fields>
-						<active translate="label">
-							<label><![CDATA[Enable]]></label>
-							<sort_order>1</sort_order>
-							<frontend_type>select</frontend_type>
-							<source_model>adminhtml/system_config_source_yesno</source_model>
-							<show_in_default>1</show_in_default>
-							<show_in_store>1</show_in_store>
-							<show_in_website>1</show_in_website>
-						</active>
-						<enable_recaptcha translate="label">
-							<label><![CDATA[Enable reCaptcha]]></label>
-							<sort_order>2</sort_order>
-							<frontend_type>select</frontend_type>
-							<tooltip><![CDATA[<img src="https://developers.google.com/recaptcha/images/reCAPTCHA_Sample_Red.png"/>]]></tooltip>
-							<source_model>adminhtml/system_config_source_yesno</source_model>
-							<show_in_default>1</show_in_default>
-							<show_in_store>1</show_in_store>
-							<show_in_website>1</show_in_website>
-							<depends><active>1</active></depends>
-						</enable_recaptcha>
-						<recaptcha_theme translate="label">
-							<label><![CDATA[reCaptcha Theme]]></label>
-							<sort_order>3</sort_order>
-							<frontend_type>select</frontend_type>
-							<source_model>infeentynewsletter/recaptchatheme</source_model>
-							<show_in_default>1</show_in_default>
-							<show_in_store>1</show_in_store>
-							<show_in_website>1</show_in_website>
-							<depends><enable_recaptcha>1</enable_recaptcha></depends>
-						</recaptcha_theme>
-						<publickey translate="label">
-							<label><![CDATA[Public Key]]></label>
-							<sort_order>4</sort_order>
-							<frontend_type>text</frontend_type>
-							<show_in_default>1</show_in_default>
-							<show_in_store>1</show_in_store>
-							<show_in_website>1</show_in_website>
-						</publickey>
-					</fields>
-				</captcha>
+                </general>
 			</groups>
 		</infeenty_newsletter>
 	</sections>
