@@ -12,7 +12,7 @@ class Infeenty_Newsletter_Block_Subscribe extends Mage_Newsletter_Block_Subscrib
 {
 	public function _construct() {
         parent::_construct(); 
-        $this->setTemplate('infeenty/newsletter/subscribe.phtml');  
+        $this->setTemplate('infeenty/newsletter/subscribe.phtml');
     }
 	public function getFields(){
 		$fields = array(
