@@ -5,7 +5,16 @@ class Infeenty_Newsletter_SubscriberController extends Mage_Newsletter_Subscribe
     /**
       * New subscription action
       */
-
+	public function abcAction(){
+		
+		$block = $this->getLayout()->createBlock('newsletter/subscribe');
+		$this->loadLayout()->_addContent($block);
+		$this->renderLayout();
+	}
+	private function _addContent(Infeenty_Newsletter_Block_Subscribe $block){
+		//$this->getLayout()->getBlock('content')->setChild('infeenty_newsletter', $block);
+		$this->getLayout()->getBlock('content')->append($block);
+	}
     public function newAction()
     {
 		$error_message = $this->__('Please fill required fields');

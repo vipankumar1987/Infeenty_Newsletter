@@ -2,7 +2,7 @@
 <config>
 	<modules>
 		<Infeenty_Newsletter>
-			<version>1.0.2</version>
+			<version>1.0.3</version>
 		</Infeenty_Newsletter>
 	</modules>
 	<global>
@@ -93,4 +93,14 @@
 			</updates>
 		</layout>
 	</frontend>
+	<default>
+		<infeenty_newsletter>
+			<general>
+				<title>Sign Up to stay in the loop</title>
+				<description>You'll also receive our best deals and decorating ideas.</description>
+				<active>0</active>
+				<onstartup>0</onstartup>
+			</general>
+		</infeenty_newsletter>
+	</default>
 </config>

@@ -1,0 +1,6 @@
+<widgets>
+    <newsletter_subscribe type="newsletter/subscribe">
+        <name>Newsletter &#8734;</name>
+        <description>Modify Default Newsletter module so that guest user can also put their first name and last name</description>
+    </newsletter_subscribe>
+</widgets>

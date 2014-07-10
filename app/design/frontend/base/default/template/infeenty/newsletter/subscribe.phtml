@@ -23,7 +23,6 @@
  * @copyright   Copyright (c) 2013 Magento Inc. (http://www.magentocommerce.com)
  * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
  */
- 
 if( $this->isSubscribed()){
 	return;
 }
@@ -34,6 +33,9 @@ if( $this->isSubscribed()){
     </div>
     <form action="<?php echo $this->getFormActionUrl() ?>" onsubmit="return false;" method="post" id="newsletter-validate-detail">
         <div class="block-content">
+			<div class="form-description">
+				<?php echo $this->getDescription(); ?>
+			</div>
             <div class="form-subscribe-header">
                 <label for="newsletter"><?php echo $this->__('Sign Up for Our Newsletter:') ?></label>
             </div>
@@ -53,7 +55,7 @@ if( $this->isSubscribed()){
         var newsletterSubscriberFormDetail = new VarienForm('newsletter-validate-detail');
     //]]>
 	 <?php if( $this->isOnload()){
-		echo "Modalbox.show($('newsletter-validate-detail'), {title: '{$this->__('Sign Up for Our Newsletter')}', width: 300});";
+		echo "Modalbox.show($('newsletter-validate-detail'), {title: '{$this->getTitle()}', width: 300});";
 		?>
 		
 var newsletterform = null;

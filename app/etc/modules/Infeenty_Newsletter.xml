@@ -4,6 +4,9 @@
         <Infeenty_Newsletter>
             <active>true</active>
             <codePool>local</codePool>
+			<depends>
+				<Mage_Cms />
+			</depends>
         </Infeenty_Newsletter>
     </modules>
 </config>
